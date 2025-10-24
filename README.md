@@ -29,8 +29,8 @@ Este repositório contém a aplicação frontend que inclui:
 │   ├── admin/               # Componentes do painel admin
 │   └── shared/              # Componentes compartilhados
 ├── pages/
-│   ├── public/              # Páginas públicas (pedidos)
-│   └── admin/               # Páginas do painel admin
+│   ├── admin/               # Páginas do painel admin
+|   └── ./                   # Páginas públicas: pedidos, login (para gestão de restaurantes e pedidos de clientes), etc.
 ├── composables/             # Composables do Nuxt
 ├── stores/                  # Stores do Pinia
 ├── types/                   # Tipos TypeScript

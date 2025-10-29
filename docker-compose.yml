@@ -1,0 +1,31 @@
+services:
+  nuxt:
+    build:
+      context: .
+      dockerfile: docker/node/Dockerfile
+    container_name: delivery-nuxt
+    restart: unless-stopped
+    working_dir: /app
+    ports:
+      - "3000:3000"
+      - "24678:24678"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development
+      - NUXT_HOST=0.0.0.0
+      - NUXT_PORT=3000
+      - NUXT_PUBLIC_API_BASE=http://delivery.local/api
+    networks:
+      - delivery-network
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.frontend.rule=Host(`delivery.local`)"
+      - "traefik.http.routers.frontend.priority=10"
+      - "traefik.http.services.frontend.loadbalancer.server.port=3000"
+
+networks:
+  delivery-network:
+    external: true
+    name: backend_delivery-network

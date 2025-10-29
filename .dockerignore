@@ -1,0 +1,49 @@
+# Git
+.git
+.gitignore
+
+# CI/CD
+.github
+.gitlab-ci.yml
+
+# IDEs
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules
+.pnpm-store
+
+# Build outputs
+.nuxt
+.output
+dist
+
+# Tests
+/tests
+coverage
+*.spec.ts
+*.test.ts
+
+# Documentation
+README.md
+CHANGELOG.md
+*.md
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+Thumbs.db
+
+
